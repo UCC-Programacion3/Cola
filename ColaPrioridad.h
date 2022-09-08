@@ -153,7 +153,13 @@ void ColaPrioridad<T>::encolarPrioridad(T dato, int prioridad)
   nuevo->setPrioridad(prioridad);
 
   NodoPrioridad<T> *aux = tope;
-
+  
+   if(esVacia()){
+        tope = nuevo;
+        fondo = tope;
+        return;
+    }
+  
   if (tope->getPrioridad() > prioridad)
   {
     nuevo->setSiguiente(tope);
@@ -161,7 +167,7 @@ void ColaPrioridad<T>::encolarPrioridad(T dato, int prioridad)
     return;
   }
 
-  while (aux->getSiguiente()->getPrioridad() <= prioridad)
+  while (auxNodo->getSiguiente() != nullptr && aux->getSiguiente()->getPrioridad() <= prioridad)
   {
     aux = aux->getSiguiente();
   }
