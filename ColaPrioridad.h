@@ -167,7 +167,7 @@ void ColaPrioridad<T>::encolarPrioridad(T dato, int prioridad)
     return;
   }
 
-  while (auxNodo->getSiguiente() != nullptr && aux->getSiguiente()->getPrioridad() <= prioridad)
+  while (aux->getSiguiente() != nullptr && aux->getSiguiente()->getPrioridad() <= prioridad)
   {
     aux = aux->getSiguiente();
   }
